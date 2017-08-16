@@ -35,6 +35,7 @@ public:
 protected:
     void testAddition(void);
     void testMultiply(void);
+    void testFail(void);
 
 private:
 

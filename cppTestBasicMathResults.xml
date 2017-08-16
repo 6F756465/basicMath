@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding='ISO-8859-1' standalone='yes' ?>
 <TestRun>
-  <FailedTests></FailedTests>
+  <FailedTests>
+    <FailedTest id="3">
+      <Name>TestBasicMath::testFail</Name>
+      <FailureType>Assertion</FailureType>
+      <Location>
+        <File>TestBasicM.cpp</File>
+        <Line>60</Line>
+      </Location>
+      <Message>assertion failed
+- Expression: 6 == mTestObj-&gt;Multiply(1,1)
+</Message>
+    </FailedTest>
+  </FailedTests>
   <SuccessfulTests>
     <Test id="1">
       <Name>TestBasicMath::testAddition</Name>
@@ -10,9 +22,9 @@
     </Test>
   </SuccessfulTests>
   <Statistics>
-    <Tests>2</Tests>
-    <FailuresTotal>0</FailuresTotal>
+    <Tests>3</Tests>
+    <FailuresTotal>1</FailuresTotal>
     <Errors>0</Errors>
-    <Failures>0</Failures>
+    <Failures>1</Failures>
   </Statistics>
 </TestRun>
