@@ -25,6 +25,7 @@ class TestBasicMath : public CppUnit::TestFixture
     CPPUNIT_TEST_SUITE(TestBasicMath);
     CPPUNIT_TEST(testAddition);
     CPPUNIT_TEST(testMultiply);
+    CPPUNIT_TEST(testFail);
     CPPUNIT_TEST_SUITE_END();
 
 public:
