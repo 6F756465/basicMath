@@ -20,7 +20,6 @@ using namespace CppUnit;
 using namespace std;
 
 //-----------------------------------------------------------------------------
-
 class TestBasicMath : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(TestBasicMath);
@@ -54,7 +53,10 @@ TestBasicMath::testMultiply(void)
 {
     CPPUNIT_ASSERT(6 == mTestObj->Multiply(2,3));
 }
-
+void TestBasicMath::testFail(void)
+{
+	CPPUNIT_ASSERT(6 == mTestObj->Multiply(1,1));
+}
 void TestBasicMath::setUp(void)
 {
     mTestObj = new CBasicMath();
