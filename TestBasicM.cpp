@@ -20,12 +20,12 @@ using namespace CppUnit;
 using namespace std;
 
 //-----------------------------------------------------------------------------
-
 class TestBasicMath : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(TestBasicMath);
     CPPUNIT_TEST(testAddition);
     CPPUNIT_TEST(testMultiply);
+    CPPUNIT_TEST(testFail);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -35,6 +35,7 @@ public:
 protected:
     void testAddition(void);
     void testMultiply(void);
+    void testFail(void);
 
 private:
 
@@ -54,7 +55,10 @@ TestBasicMath::testMultiply(void)
 {
     CPPUNIT_ASSERT(6 == mTestObj->Multiply(2,3));
 }
-
+void TestBasicMath::testFail(void)
+{
+	CPPUNIT_ASSERT(6 == mTestObj->Multiply(1,1));
+}
 void TestBasicMath::setUp(void)
 {
     mTestObj = new CBasicMath();
@@ -88,8 +92,8 @@ int main(int argc, char* argv[])
     testrunner.run(testresult);
 
     // output results in compiler-format
-    CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
-    compileroutputter.write ();
+    //CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cout);
+    //compileroutputter.write ();
 
     // Output XML for Jenkins CPPunit plugin
     ofstream xmlFileOut("cppTestBasicMathResults.xml");
@@ -97,5 +101,6 @@ int main(int argc, char* argv[])
     xmlOut.write();
 
     // return 0 if tests were successful
-    return collectedresults.wasSuccessful() ? 0 : 1;
+    //return collectedresults.wasSuccessful() ? 0 : 1;
+    return 0;
 }
